@@ -24,22 +24,21 @@ Variables
   --maxWidth: 40rem;
   --fullWidth: 1170px;
 }
-/* 
-====== 
+/*  
 Global Styles 
-======
 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #000;
+  background-color: #fff;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--mainBlack);
-  background: var(--mainBackground);
   line-height: 1.4;
   font-size: 1rem;
   font-weight: 300;
@@ -52,7 +51,7 @@ h5,
 h6 {
   font-family: var(--slantedFont);
   margin-bottom: 1.25rem;
-  letter-spacing: var(--mainSpacing);
+  letter-spacing: 0.1rem;
 }
 p {
   margin-bottom: 1.25rem;
@@ -62,149 +61,63 @@ ul {
 }
 a {
   text-decoration: none;
-  color: var(--mainBlack);
-}
-img {
-  width: 100%;
-  display: block;
 }
 
+
 /* 
-====== 
-Buttons 
-======
+Buttons
 */
-.btn,
-.btn-white,
-.btn-primary {
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
-  padding: 0.45rem 0.8rem;
+.btn
+ {
+  /* text-transform: uppercase; */
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 0.8rem;
   display: inline-block;
   transition: var(--mainTransition);
   cursor: pointer;
-  font-size: 0.8rem;
-  background: transparent;
+  font-size: 14px;
+  background: #ff592c;
+  font-weight: bold;
+  color: #fff;
   border-radius: var(--mainBorderRadius);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  /* margin: 30px; */
 }
+
 .btn:hover {
-  background: var(--primaryColor);
   color: var(--mainWhite);
 }
-.btn-white {
-  background: transparent;
-  color: var(--mainWhite);
-  border-color: var(--mainWhite);
-}
-.btn-white:hover {
-  background: var(--mainWhite);
-  color: var(--primaryColor);
-}
-.btn-primary {
-  background: var(--primaryColor);
-  color: var(--mainWhite);
-  border-color: transparent;
-}
-.btn-primary:hover {
-  background: var(--primaryLightColor);
-  color: var(--primaryColor);
-}
-.btn-block {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  box-shadow: var(--lightShadow);
-  text-align: center;
-}
-.btn-details {
-  padding: 0.25rem 0.4rem;
-}
-.btn-details:hover {
-  background: var(--primaryLightColor);
-  border-color: var(--primaryLightColor);
-}
+
 /* 
-====== 
 Navbar
-======
 */
 .navbar {
-  background: var(--mainWhite);
-  height: 5rem;
+  height: 4rem;
   display: flex;
-  align-items: center;
-  border-bottom: 2px solid var(--primaryColor);
-  box-shadow: var(--lightShadow);
+  padding-left: 18px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-.nav-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: var(--smallWidth);
-  margin: 0 auto;
-  max-width: var(--fullWidth);
+
+.nav-bar-name {
+  margin-top: 10px;
 }
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-.nav-links a {
-  text-transform: capitalize;
-  display: inline-block;
-  font-weight: bold;
-  margin-right: 0.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
-  transition: var(--mainTransition);
-}
-.nav-links a:hover {
-  color: var(--primaryColor);
-}
-.logo {
-  width: 12rem;
-}
+
 /* 
-====== 
-About
-======
-*/
-.about-section {
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-}
-.about-section p {
-  line-height: 2rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-/* 
-====== 
 Error
-======
 */
 .error-page {
   display: flex;
   justify-content: center;
 }
+
 .error-container {
   text-align: center;
   text-transform: capitalize;
 }
-/* 
-====== 
-Cocktails List 
-======
-*/
 
-.section {
-  padding: 5rem 0;
-}
 .section-title {
   font-size: 2rem;
   text-transform: capitalize;
@@ -213,142 +126,122 @@ Cocktails List
   margin-bottom: 3.5rem;
   margin-top: 1rem;
 }
-.cocktails-center {
-  width: var(--smallWidth);
-  margin: 0 auto;
-  max-width: var(--fullWidth);
-  display: grid;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  /* align-items: start; */
+
+
+/*
+Cocktail List
+*/
+
+.cocktails {
+  /* margin: 0 auto; */
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-@media screen and (min-width: 576px) {
-  .cocktails-center {
-    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
-  }
+
+.cocktails h1 {
+  display: flex;
+  justify-content: center;
+  letter-spacing: .15rem;
+  font-size: 34px;
 }
-/* 
-====== 
-Cocktail 
-======
+
+/*
+Single Cocktail
 */
 
 .cocktail {
   background: var(--mainWhite);
-  margin-bottom: 2rem;
-  box-shadow: var(--lightShadow);
+  padding: 3rem;
+  margin: 5rem 2rem;
+  box-shadow: rgba(138, 138, 138, 0.24) 0px 3px 8px; 
   transition: var(--mainTransition);
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: var(--mainBorderRadius);
 }
-.cocktail:hover {
-  box-shadow: var(--darkShadow);
+
+.cocktail button {
+    margin: 30px;
 }
+
 .cocktail img {
-  height: 20rem;
-  object-fit: cover;
-  border-top-left-radius: var(--mainBorderRadius);
-  border-top-right-radius: var(--mainBorderRadius);
+  width: 325px;
+  height: auto;
+  border-radius: 5px;
+  margin: 1rem 0;
 }
-.cocktail-footer {
-  padding: 1.5rem;
+
+.cocktail-info-text {
+  font-size: 12px;
+  letter-spacing: 0.1rem;
+  word-wrap: break-word;
+  /* font-weight: light; */
 }
-.cocktail-footer h3,
-.cocktail-footer h4,
-.cocktail-footer p {
-  margin-bottom: 0.3rem;
+
+.home-button {
+  margin: 30px !important;
 }
-.cocktail-footer h3 {
-  font-size: 2rem;
-}
-.cocktail-footer p {
-  color: var(--darkGrey);
-  margin-bottom: 0.5rem;
-}
+
+
+
 /* 
-====== 
-Form
-======
+Search Form
 */
-.search {
-  margin-top: 1rem;
-  padding-bottom: 0;
-}
 
 .search-form {
-  width: var(--smallWidth);
-  margin: 0 auto;
-  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  font-weight: bold;
+  font-size: 18px;
   background: var(--mainWhite);
-  padding: 2rem 2.5rem;
-  text-transform: capitalize;
+  padding: 3rem 1rem;
+  margin-top: 32px;
   border-radius: var(--mainBorderRadius);
-  box-shadow: var(--lightShadow);
 }
 
-.form-control label {
-  display: block;
-  margin-bottom: 1.25rem;
-  font-weight: bold;
-  letter-spacing: 0.25rem;
-  color: var(--primaryColor);
+.search-form input {
+  font-size: 14px;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
 }
-.form-control input {
-  width: 100%;
-  border: none;
-  border-color: transparent;
-  background: var(--mainBackground);
-  border-radius: var(--mainBorderRadius);
-  padding: 0.5rem;
-  font-size: 1.2rem;
-}
-/* 
-====== 
+
+/*  
 Cocktail
-======
 */
 
-.cocktail-section {
-  text-align: center;
-}
 .drink {
-  width: var(--smallWidth);
-  max-width: var(--fullWidth);
   margin: 0 auto;
   text-align: left;
+  text-transform: capitalize;
 }
+
 .drink img {
   border-radius: var(--mainBorderRadius);
 }
+
 .drink p {
   font-weight: bold;
-  text-transform: capitalize;
   line-height: 1.8;
 }
-.drink span {
-  margin-right: 0.5rem;
+
+.single-cocktail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2rem;
+  max-width: 100%;
+  font-size: 14px;
 }
-.drink-data {
-  background: var(--primaryLightColor);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--mainBorderRadius);
-  color: var(--primaryColor);
+
+.single-drink-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.drink-info {
-  padding-top: 2rem;
-}
-@media screen and (min-width: 992px) {
-  .drink {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .drink-info {
-    padding-top: 0;
-  }
-}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -359,7 +252,6 @@ Cocktail
   height: 4em;
 }
 .loader {
-  color: var(--primaryColor);
   text-indent: -9999em;
   margin: 88px auto;
   margin-top: 20rem;
